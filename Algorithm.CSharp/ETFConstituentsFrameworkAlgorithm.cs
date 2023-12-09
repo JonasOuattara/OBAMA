@@ -44,7 +44,7 @@ namespace QuantConnect.Algorithm.CSharp
             SetPortfolioConstruction(new EqualWeightingPortfolioConstructionModel());
         }
 
-        private IEnumerable<Symbol> ETFConstituentsFilter(IEnumerable<ETFConstituentData> constituents)
+        private protected IEnumerable<Symbol> ETFConstituentsFilter(IEnumerable<ETFConstituentData> constituents)
         {
             // Get the 10 securities with the largest weight in the index
             return constituents.OrderByDescending(c => c.Weight).Take(8).Select(c => c.Symbol);
@@ -98,7 +98,7 @@ namespace QuantConnect.Algorithm.CSharp
             {"Estimated Strategy Capacity", "$350000000.00"},
             {"Lowest Capacity Asset", "GOOCV VP83T1ZUHROL"},
             {"Portfolio Turnover", "13.71%"},
-            {"OrderListHash", "5ce5eff3201fdcd77365a2c8b5911e36"}
+            {"OrderListHash", "908b83ae2348045279404245da2c80fb"}
         };
     }
 }
